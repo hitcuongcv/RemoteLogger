@@ -5,6 +5,7 @@ Setting up and using the library:
 
 2. Intergrate:
 - First, init the Manager inside the Application class:
+
         LogParameters logParameters = new LogParameters.Builder()
                 .setLogEntityClass(Log.class) // (Required) Log entity class. 
                 .setInterruptType(LogParameters.InterruptType.RECORD_COUNT) // (Optional) Default RECORD_COUNT.
