@@ -39,6 +39,13 @@ public class RemoteLoggerManager {
         return sInstance;
     }
 
+    /**
+     * Initialize the singleton RemoteLoggerManager.
+     *
+     * @param application   the application object.
+     * @param logParameters Configs for remote logger.
+     * @return RemoteLoggerManager instance.
+     */
     public static RemoteLoggerManager init(@NonNull Application application, @NonNull LogParameters logParameters) {
         sInstance = new RemoteLoggerManager();
 
@@ -68,7 +75,7 @@ public class RemoteLoggerManager {
             throw new IllegalArgumentException("PushCallback must not be null.");
         } else if (logParams.getInterruptType() == LogParameters.InterruptType.TIME) {
             if (logParams.getInterval() <= 0) {
-                throw new IllegalArgumentException("Interval must be larger than 15.");
+                throw new IllegalArgumentException("Interval must be larger than 15."); // Cause we're using WorkManager.
             }
             scheduleUpload();
         }
