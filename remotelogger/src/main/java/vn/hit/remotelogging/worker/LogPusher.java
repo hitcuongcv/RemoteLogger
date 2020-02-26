@@ -4,8 +4,8 @@ public interface LogPusher {
     void push(Callback callback);
 
     interface Callback {
-        void onSuccess();
+        void onSuccess(Object logEvents);
 
-        void onFailure();
+        void onFailure(Object logEvents, String errorMessage);
     }
 }
