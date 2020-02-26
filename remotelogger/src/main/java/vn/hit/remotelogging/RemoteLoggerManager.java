@@ -98,6 +98,10 @@ public class RemoteLoggerManager {
         pendingLogStore.dispatch(new Action(ActionType.ADD_ALL, Arrays.asList(logs)));
     }
 
+    public void addAllLogs(List<? extends PendingLogEntity> logs) {
+        pendingLogStore.dispatch(new Action(ActionType.ADD_ALL, logs));
+    }
+
     public void clearLogs() {
         pendingLogStore.dispatch(new Action(ActionType.CLEAR_ALL));
     }
