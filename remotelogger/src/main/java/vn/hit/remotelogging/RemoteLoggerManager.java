@@ -7,6 +7,7 @@ import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -91,6 +92,10 @@ public class RemoteLoggerManager {
 
     public void addLog(PendingLogEntity log) {
         pendingLogStore.dispatch(new Action(ActionType.ADD, log));
+    }
+
+    public void addAllLogs(PendingLogEntity... logs) {
+        pendingLogStore.dispatch(new Action(ActionType.ADD_ALL, Arrays.asList(logs)));
     }
 
     public void clearLogs() {

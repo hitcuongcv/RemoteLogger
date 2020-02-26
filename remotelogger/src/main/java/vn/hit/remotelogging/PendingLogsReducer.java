@@ -1,6 +1,7 @@
 package vn.hit.remotelogging;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import trikita.jedux.Action;
 import trikita.jedux.Store;
@@ -15,6 +16,9 @@ class PendingLogsReducer implements Store.Reducer<Action, PendingLogsState> {
             case ADD:
                 PendingLogEntity pendingLog = (PendingLogEntity) action.value;
                 return ImmutablePendingLogsState.builder().from(oldState).addPendingLogs(pendingLog).build();
+            case ADD_ALL:
+                List<PendingLogEntity> pendingLogs = (List<PendingLogEntity>) action.value;
+                return ImmutablePendingLogsState.builder().from(oldState).addAllPendingLogs(pendingLogs).build();
             case CLEAR_ALL:
                 return ImmutablePendingLogsState.builder().pendingLogs(new ArrayList<PendingLogEntity>()).build();
         }
