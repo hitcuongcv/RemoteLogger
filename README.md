@@ -1,7 +1,7 @@
 # RemoteLogger
 
 Setting up and using the library:
-1. Install lib following site: https://jitpack.io/#hitcuongcv/RemoteLogger/1.0.
+1. Install lib following site: https://jitpack.io/#hitcuongcv/RemoteLogger/x.y.
 
 2. Intergrate:
 - First, init the Manager inside the Application class:
