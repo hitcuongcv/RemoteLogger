@@ -56,6 +56,34 @@ public class LogParameters {
         return pushCallback;
     }
 
+    public void setStoreObserver(Runnable storeObserver) {
+        this.storeObserver = storeObserver;
+    }
+
+    public void setInterruptType(InterruptType interruptType) {
+        this.interruptType = interruptType;
+    }
+
+    public void setInterval(long interval) {
+        this.interval = interval;
+    }
+
+    public void setTriggerAmount(int triggerAmount) {
+        this.triggerAmount = triggerAmount;
+    }
+
+    public void setLogEntityClass(Class logEntityClass) {
+        this.logEntityClass = logEntityClass;
+    }
+
+    public void setLogPusher(LogPusher logPusher) {
+        this.logPusher = logPusher;
+    }
+
+    public void setPushCallback(LogPusher.Callback pushCallback) {
+        this.pushCallback = pushCallback;
+    }
+
     public static class Builder {
         private Runnable storeObserver;
         private InterruptType interruptType = InterruptType.RECORD_COUNT;
