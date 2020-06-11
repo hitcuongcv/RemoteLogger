@@ -95,7 +95,7 @@ public class LogParameters {
 
         /**
          * @param storeObserver a Runnable that will be triggered when the State changes.
-         *                      Only using this setter if you wanna using your own way to
+         *                      Only using this setter if you want to use your own way to
          *                      interact with the changes of State. The default observer
          *                      will push log every time logs count reach the limit while
          *                      using Record Count Interruption. Modifying the default
